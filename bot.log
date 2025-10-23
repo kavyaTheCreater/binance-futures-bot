@@ -1,0 +1,19 @@
+2025-10-23 21:55:08,214 - utils - WARNING - API_SECRET not set — request unsigned (test mode).
+2025-10-23 21:55:12,037 - utils - ERROR - API request failed: POST /fapi/v1/order -> 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.01&positionSide=BOTH&timestamp=1761236708214&recvWindow=5000&signature=
+Traceback (most recent call last):
+  File "E:\KavyashreeMR_binance_bot\src\utils.py", line 63, in make_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\KavyashreeMR_binance_bot\venv\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.01&positionSide=BOTH&timestamp=1761236708214&recvWindow=5000&signature=
+2025-10-23 21:55:12,079 - market_orders - ERROR - Failed to place market order
+Traceback (most recent call last):
+  File "E:\KavyashreeMR_binance_bot\src\market_orders.py", line 31, in place_market_order
+    res = make_request("POST", ORDER_ENDPOINT, params, signed=True)
+  File "E:\KavyashreeMR_binance_bot\src\utils.py", line 63, in make_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\KavyashreeMR_binance_bot\venv\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.01&positionSide=BOTH&timestamp=1761236708214&recvWindow=5000&signature=
